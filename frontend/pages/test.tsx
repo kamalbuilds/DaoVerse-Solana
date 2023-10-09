@@ -139,7 +139,7 @@ async function executeProposal() {
   console.log("Transaction executed: ", signature);
 }
 
-retrieveMultisig("4XApq8oGapFGtELNounHtUTQDiuDY1tRZNFydSqAfcNZ");
+// retrieveMultisig("4XApq8oGapFGtELNounHtUTQDiuDY1tRZNFydSqAfcNZ");
 // end
 
 // async function lo(){
