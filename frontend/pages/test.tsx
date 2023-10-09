@@ -16,43 +16,43 @@ import updateMessage from "./api/updateMessage";
 import { Permissions , Permission } from "@sqds/multisig/lib/types";
 import { retrieveMultisig } from "../utils/retrievemultisig";
 // Function to create a new multisig
-async function createMultisig() {
-  const creator = Keypair.fromSecretKey(bs58.decode(process.env.NEXT_PUBLIC_SECRET_KEY));
-  const secondMember = Keypair.generate();
+// async function createMultisig() {
+//   const creator = Keypair.fromSecretKey(bs58.decode(process.env.NEXT_PUBLIC_SECRET_KEY));
+//   const secondMember = Keypair.generate();
 
-  const createKey = Keypair.generate();
-  const publiccreateKey = createKey.publicKey;
-  console.log(publiccreateKey.toBase58() , "publiccreateKey" , createKey.secretKey.toString(), "secretkey");
-  const [multisigPda] = multisig.getMultisigPda({
-    createKey : publiccreateKey,
-  });
+//   const createKey = Keypair.generate();
+//   const publiccreateKey = createKey.publicKey;
+//   console.log(publiccreateKey.toBase58() , "publiccreateKey" , createKey.secretKey.toString(), "secretkey");
+//   const [multisigPda] = multisig.getMultisigPda({
+//     createKey : publiccreateKey,
+//   });
 
-  console.log("multisigpda" , multisigPda.toBase58());
-  console.log(createKey , "createkey" , multisigPda , "multisigPda" , creator , "creator" , secondMember , "secondMember"
-  )
+//   console.log("multisigpda" , multisigPda.toBase58());
+//   console.log(createKey , "createkey" , multisigPda , "multisigPda" , creator , "creator" , secondMember , "secondMember"
+//   )
 
-  const signature = await multisig.rpc.multisigCreate({
-    connection,
-    createKey,
-    creator,
-    multisigPda,
-    configAuthority: null,
-    timeLock: 0,
-    members: [
-      {
-        key: creator.publicKey,
-        permissions: Permissions.all(),
-      },
-      {
-        key: secondMember.publicKey,
-        permissions: Permissions.fromPermissions([Permission.Vote]),
-      },
-    ],
-    threshold: 2,
-  });
+//   const signature = await multisig.rpc.multisigCreate({
+//     connection,
+//     createKey,
+//     creator,
+//     multisigPda,
+//     configAuthority: null,
+//     timeLock: 0,
+//     members: [
+//       {
+//         key: creator.publicKey,
+//         permissions: Permissions.all(),
+//       },
+//       {
+//         key: secondMember.publicKey,
+//         permissions: Permissions.fromPermissions([Permission.Vote]),
+//       },
+//     ],
+//     threshold: 2,
+//   });
 
-  console.log("Multisig created: ", signature);
-}
+//   console.log("Multisig created: ", signature);
+// }
 
 // // Function to create a transaction proposal
 async function createTransactionProposal() {
@@ -222,7 +222,7 @@ export default function Home() {
           )
         )}
       </div>
-      <button onClick={createMultisig}>Create Multisig</button>
+      {/* <button onClick={createMultisig}>Create Multisig</button> */}
     </div>
   );
 }
