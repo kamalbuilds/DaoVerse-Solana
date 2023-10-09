@@ -19,6 +19,7 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import { Orbis, OrbisProvider } from "@orbisclub/components";
 import "@orbisclub/components/dist/index.modern.css";
 import React, { useEffect, useState } from "react";
+import { MarketingLayout } from "../layouts/Marketing";
 
 export default function App({
   Component,
@@ -67,7 +68,9 @@ export default function App({
                     "phantom",
                   ]}
                 >
-                    <Component {...pageProps} />
+                    <MarketingLayout>
+                      <Component {...pageProps} />
+                    </MarketingLayout>
                 </OrbisProvider>
               </WalletModalProvider>
             </WalletProvider>

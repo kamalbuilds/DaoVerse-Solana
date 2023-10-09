@@ -4,7 +4,6 @@ import { signIn } from "next-auth/react";
 import { ComponentProps, ReactNode } from "react";
 import { DASHBOARD_URL } from "../constants";
 import { SignInIcon } from "../icons";
-import { MarketingLayout } from "../layouts/Marketing";
 import * as Server from "../lib/server";
 import { Button, LinkButton } from "../primitives/Button";
 import { Container } from "../primitives/Container";
@@ -29,7 +28,7 @@ function Feature({ title, description, className, ...props }: FeatureProps) {
 export default function Index() {
 
   return (
-    <MarketingLayout>
+    <>
       <Container className={styles.section}>
         <div className={styles.heroInfo}>
           <h1 className={styles.heroTitle}>
@@ -41,9 +40,8 @@ export default function Index() {
         </div>
         <div className={styles.heroActions}>
           <Button icon={<SignInIcon />} onClick={() => signIn()}>
-            Sign in
+            Dashboard
           </Button>
-          <button onClick={connectWithSeed}>Connect with Seed</button>
           <LinkButton
             href="/forum"
             variant="secondary"
@@ -51,7 +49,7 @@ export default function Index() {
             Check Forum
           </LinkButton>
           <LinkButton
-            href="/modal"
+            href="/createdao"
             variant="secondary"
           >
             Create DAO
@@ -64,60 +62,61 @@ export default function Index() {
           <Feature
             description={
               <>
-                A collaborative whiteboard app with included share menu,
-                documents listing, users, groups, permissions, and more.
+                Easily setup and manage your DAO management and voting on the Solana blockchain,
               </>
             }
-            title="Liveblocks"
+            title="DAO Management"
           />
           <Feature
             description={
               <>
-                Best practices followed, using a mixture of SSR and custom API
-                endpoints. Modify documents from both client and server.
+                An encrypted forum called Orbis for secure discussions and
+                collaboration among DAO participants. This platform ensures that the
+                best ideas rise to the top.
               </>
             }
-            title="Next.js"
+            title="Encrypted Forum (Orbis)"
           />
           <Feature
             description={
               <>
-                Adjust our reusable interface & design system to fit your needs.
+                Utilizes OpenBook v2 for creating market-making vaults, enhancing
+                liquidity and efficiency while enabling DAO members to earn rewards
+                from the multisig vault created by Squads v4.
               </>
             }
-            title="User Interface"
+            title="Market-Making Vaults"
           />
           <Feature
             description={
               <>
-                All custom client and server functions are fully typed, and easy
-                to update.
+                Built on Squads Protocol's foundational technology, providing
+                secure DAO Voting and Treasury Management on Solana.
               </>
             }
-            title="TypeScript"
+            title="Squads Protocol Integration"
           />
           <Feature
             description={
               <>
-                Complete authentication, compatible with any NextAuth provider,
-                including GitHub, Google, Auth0, and many more.
+                Leverages OpenBook v2 programs to turn vaults into market-making vaults, enhancing liquidity and efficiency while enabling DAO members to earn rewards from the multisig vault created by Squads v4.
               </>
             }
-            title="NextAuth.js"
+            title="OpenBook V2 Integration "
           />
           <Feature
             description={
               <>
-                See data update live using the SWR (state-while-revalidate)
-                library.
+                Features multi-signature functionality,
+                spending limits, sub-accounts, time locks, and more.
               </>
             }
-            title="SWR"
+            title="Amazing Features 💫"
           />
         </div>
-        {/* <button onClick={createMultisig}>Create Multisig</button> */}
       </Container>
-    </MarketingLayout>
+
+      </>
   );
 }
 

@@ -60,40 +60,7 @@ const ORBIS_PROJECT_ID ="kjzl6cwe1jw145i0ycmmvk80ndfn1kgrqamcw6tpfcm8ph5xuaoqrs3
 
 export async function createContext(name: string) {
 
-    const a = {
-        "0": 106,
-        "1": 9,
-        "2": 1,
-        "3": 217,
-        "4": 162,
-        "5": 168,
-        "6": 6,
-        "7": 36,
-        "8": 9,
-        "9": 50,
-        "10": 234,
-        "11": 243,
-        "12": 85,
-        "13": 89,
-        "14": 231,
-        "15": 70,
-        "16": 117,
-        "17": 237,
-        "18": 57,
-        "19": 148,
-        "20": 47,
-        "21": 175,
-        "22": 187,
-        "23": 196,
-        "24": 230,
-        "25": 189,
-        "26": 91,
-        "27": 197,
-        "28": 249,
-        "29": 41,
-        "30": 35,
-        "31": 198
-    }
+
     // const seed = new Uint8Array(Object.values(a));
     // const response = await orbis.connectWithSeed(seed);
     // console.log(response,"orbis did",seed);
@@ -119,38 +86,38 @@ export async function createContext(name: string) {
     return res;
 }
 
-export async function grantAccess(address: string, name: string, sessionId: number) {
-    // @ts-ignore
-    const pk = new Uint8Array(JSON.parse(process.env.NEXT_PUBLIC_ORBIS_PRIVATE));
-    await orbis.connectWithSeed(pk);
-    const { data } = await orbis.getCredentials('did:pkh:eip155:1:' + address);
-    for (const i of data) {
-        if (
-            i.identifier == `${ORBIS_ISSUER}-${ORBIS_CREDENTIAL}-${sessionId}`
-        ) {
-            return true;
-        }
-    }
-    const content = {
-        issuer: {
-            id: 'did:key:z6MkihuPGVB8wu3VmH69TvAffYZDHk7AmkDqw314FAtyb6JA',
-            name: ORBIS_NAME,
-        },
-        '@context': ['https://www.w3.org/2018/credentials/v1'],
-        issuanceDate: '1685536158',
-        credentialSubject: {
-            id: 'did:pkh:eip155:1:' + address,
-            name: ORBIS_NAME,
-            type: `${ORBIS_CREDENTIAL}-${sessionId}`,
-            network: 'EVM',
-            protocol: ORBIS_ISSUER,
-            description: `Has access to ${name}.`,
-        },
-    };
-    const res = await orbis.createTileDocument(content);
-    console.log(res);
-    return true;
-}
+// export async function grantAccess(address: string, name: string, sessionId: number) {
+//     // @ts-ignore
+//     const pk = new Uint8Array(JSON.parse(process.env.NEXT_PUBLIC_ORBIS_PRIVATE));
+//     await orbis.connectWithSeed(pk);
+//     const { data } = await orbis.getCredentials('did:pkh:eip155:1:' + address);
+//     for (const i of data) {
+//         if (
+//             i.identifier == `${ORBIS_ISSUER}-${ORBIS_CREDENTIAL}-${sessionId}`
+//         ) {
+//             return true;
+//         }
+//     }
+//     const content = {
+//         issuer: {
+//             id: 'did:key:z6MkihuPGVB8wu3VmH69TvAffYZDHk7AmkDqw314FAtyb6JA',
+//             name: ORBIS_NAME,
+//         },
+//         '@context': ['https://www.w3.org/2018/credentials/v1'],
+//         issuanceDate: '1685536158',
+//         credentialSubject: {
+//             id: 'did:pkh:eip155:1:' + address,
+//             name: ORBIS_NAME,
+//             type: `${ORBIS_CREDENTIAL}-${sessionId}`,
+//             network: 'EVM',
+//             protocol: ORBIS_ISSUER,
+//             description: `Has access to ${name}.`,
+//         },
+//     };
+//     const res = await orbis.createTileDocument(content);
+//     console.log(res);
+//     return true;
+// }
 
 export async function getcontext(){
     

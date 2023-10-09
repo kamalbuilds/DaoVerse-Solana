@@ -1,6 +1,5 @@
 import { GetServerSideProps } from "next";
 import { DASHBOARD_URL } from "../constants";
-import { MarketingLayout } from "../layouts/Marketing";
 import * as Server from "../lib/server";
 import { useState } from "react"; // Import useState
 import { Button } from "../primitives/Button";
@@ -10,7 +9,7 @@ import { Tooltip } from "@radix-ui/react-tooltip";
 import { useWallet } from "@solana/wallet-adapter-react";
 import * as multisig from "@sqds/multisig";
 import { Keypair, LAMPORTS_PER_SOL } from "@solana/web3.js";
-import { connection } from "../pages/api/utils/constants";
+import { connection } from "./api/utils/constants";
 import { bs58 } from "@project-serum/anchor/dist/cjs/utils/bytes";
 // Function to create a new multisig
 import { Permissions , Permission  } from "@sqds/multisig/lib/types";
@@ -38,7 +37,7 @@ export default function Index() {
 
 
   return (
-    <MarketingLayout>
+    <>
       <Container className="py-6">
         <form onSubmit={handleSubmit}>
           <div className="text-center">
@@ -102,7 +101,7 @@ export default function Index() {
           </div>
         </form>
       </Container>
-    </MarketingLayout>
+    </>
   );
 }
 
