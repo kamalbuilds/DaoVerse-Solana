@@ -36,36 +36,6 @@ export default function Index() {
 
   };
 
-  async function createMultisig() {
-    // @ts-ignore
-    const creator = Keypair.fromSecretKey(bs58.decode(process.env.NEXT_PUBLIC_SECRET_KEY));
-    console.log("wallet the creator", creator);
-    const secondMember = Keypair.generate();
-  
-    const createKey = Keypair.generate();
-    const publiccreatekey= createKey.publicKey;
-    const [multisigPda] = multisig.getMultisigPda({
-      createKey : publiccreatekey,
-    });
-    
-    const signature = await multisig.rpc.multisigCreate({
-      connection,
-      createKey,
-      creator,
-      multisigPda,
-      configAuthority: null,
-      timeLock: 0,
-      members: [
-        {
-          key: creator.publicKey,
-          permissions: Permissions.all(),
-        }
-      ],
-      threshold: 1,
-    });
-  
-    console.log("Multisig created: ", signature);
-  }
 
   return (
     <MarketingLayout>
@@ -126,7 +96,7 @@ export default function Index() {
           </div>
 
           <div className="text-center mt-12">
-            <Button type="submit" className="px-8 py-2 bg-blue-500 text-white" onClick={() => createMultisig()}>
+            <Button type="submit" className="px-8 py-2 bg-blue-500 text-white" >
               Create DAO
             </Button>
           </div>
