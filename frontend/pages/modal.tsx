@@ -7,8 +7,14 @@ import { Button } from "../primitives/Button";
 import { Container } from "../primitives/Container";
 import { Input } from "../primitives/Input";
 import { Tooltip } from "@radix-ui/react-tooltip";
-import { createMultisig } from "../utils/createmultisig";
 import { useWallet } from "@solana/wallet-adapter-react";
+import * as multisig from "@sqds/multisig";
+import { Keypair, LAMPORTS_PER_SOL } from "@solana/web3.js";
+import { connection } from "../pages/api/utils/constants";
+import { bs58 } from "@project-serum/anchor/dist/cjs/utils/bytes";
+// Function to create a new multisig
+import { Permissions , Permission  } from "@sqds/multisig/lib/types";
+import { Wallet } from "@project-serum/anchor";
 
 export default function Index() {
   const wallet = useWallet();
@@ -29,6 +35,37 @@ export default function Index() {
     e.preventDefault();
 
   };
+
+  async function createMultisig() {
+    // @ts-ignore
+    const creator = Keypair.fromSecretKey(bs58.decode(process.env.NEXT_PUBLIC_SECRET_KEY));
+    console.log("wallet the creator", creator);
+    const secondMember = Keypair.generate();
+  
+    const createKey = Keypair.generate();
+    const publiccreatekey= createKey.publicKey;
+    const [multisigPda] = multisig.getMultisigPda({
+      createKey : publiccreatekey,
+    });
+    
+    const signature = await multisig.rpc.multisigCreate({
+      connection,
+      createKey,
+      creator,
+      multisigPda,
+      configAuthority: null,
+      timeLock: 0,
+      members: [
+        {
+          key: creator.publicKey,
+          permissions: Permissions.all(),
+        }
+      ],
+      threshold: 1,
+    });
+  
+    console.log("Multisig created: ", signature);
+  }
 
   return (
     <MarketingLayout>
@@ -89,7 +126,7 @@ export default function Index() {
           </div>
 
           <div className="text-center mt-12">
-            <Button type="submit" className="px-8 py-2 bg-blue-500 text-white" onClick={() => createMultisig(wallet)}>
+            <Button type="submit" className="px-8 py-2 bg-blue-500 text-white" onClick={() => createMultisig()}>
               Create DAO
             </Button>
           </div>
