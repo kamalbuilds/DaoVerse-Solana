@@ -6,6 +6,85 @@ import useIsMounted from "./api/utils/useIsMounted";
 import createMessage from "./api/createMessage";
 import updateMessage from "./api/updateMessage";
 import styles from "../styles/Home.module.css";
+import {mintTokens , createTokenMint} from "../utils/minttoken";
+import {
+  clusterApiUrl,
+  Connection,
+  // Keypair,
+  Transaction,
+  SystemProgram,
+} from "@solana/web3.js";
+import {
+  createInitializeMintInstruction,
+  TOKEN_PROGRAM_ID,
+  MINT_SIZE,
+  getMinimumBalanceForRentExemptMint,
+  createMint,
+} from "@solana/spl-token";
+import * as bs58 from "bs58";
+
+// (async () => {
+//   // connection
+//   const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
+
+//   // 5YNmS1R9nNSCDzb5a7mMJ1dwK9uHeAAF4CmPEwKgVWr8
+//   const feePayer = Keypair.fromSecretKey(
+//     bs58.decode(
+//       "52HS4JgZd9cnK1U6rwpTBWCajh6FTatFcRndfbAEh8pp6ACBY7HPdv6vz5MpUeHbQraAhAxMBNyY3WM4qu5N2kKZ"
+//     )
+//   );
+
+//   // G2FAbFQPFa5qKXCetoFZQEvF9BVvCKbvUZvodpVidnoY
+//   const alice = Keypair.fromSecretKey(
+//     bs58.decode(
+//       "52HS4JgZd9cnK1U6rwpTBWCajh6FTatFcRndfbAEh8pp6ACBY7HPdv6vz5MpUeHbQraAhAxMBNyY3WM4qu5N2kKZ"
+//     )
+//   );
+
+//   // 1) use build-in function
+//   let mintPubkey = await createMint(
+//     connection, // conneciton
+//     feePayer, // fee payer
+//     alice.publicKey, // mint authority
+//     alice.publicKey, // freeze authority (you can use `null` to disable it. when you disable it, you can't turn it on again)
+//     8 // decimals
+//   );
+//   console.log(`mint: ${mintPubkey.toBase58()}`);
+
+//   // or
+
+//   // 2) compose by yourself
+//   const mint = Keypair.generate();
+//   console.log(`mint: ${mint.publicKey.toBase58()}`);
+
+//   let tx = new Transaction().add(
+//     // create mint account
+//     SystemProgram.createAccount({
+//       fromPubkey: feePayer.publicKey,
+//       newAccountPubkey: mint.publicKey,
+//       space: MINT_SIZE,
+//       lamports: await getMinimumBalanceForRentExemptMint(connection),
+//       programId: TOKEN_PROGRAM_ID,
+//     }),
+//     // init mint account
+//     createInitializeMintInstruction(
+//       mint.publicKey, // mint pubkey
+//       8, // decimals
+//       alice.publicKey, // mint authority
+//       alice.publicKey // freeze authority (you can use `null` to disable it. when you disable it, you can't turn it on again)
+//     )
+//   );
+//   console.log(
+//     `txhash: ${await connection.sendTransaction(tx, [feePayer, mint])}`
+//   );
+// })();
+
+async function lo(){
+  const createtok = await createTokenMint();
+  // console.log(createtok,"cere")
+  mintTokens(createtok,"ApHZ4DtDyVPYP84XnPgTHpYTqEg5o67UmNF9jfU3iX7" )
+}
+lo();
 
 export default function Home() {
   const [messageAccount, _] = useState(Keypair.generate());
