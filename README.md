@@ -16,6 +16,8 @@ https://docs.google.com/presentation/d/1HNJjOoXS-09uKiFz7lkW8xWz1Dfb07_1cAz31vEL
 
 ## Demo Video
 
+Explorer Links for DAOs created -> https://explorer.solana.com/tx/3gq2S3gi9z6Rs2Up4qk6JjYgiqWxveYKZ4QPhhMmvtkbMW9sFPS4o5n6zKsPb6GNNPNhVTAhcnKm24Zx5TSSTWYk?cluster=devnet
+
 ## Technologies
 🛡️ Squads Protocol allowed us to build a DAO Voting system and efficient treasury management , our seamless integration with Squads Protocol's programs leads to, enhanced features like multi-signature functionality. This includes versatile features such as spending limits, sub-accounts, time locks, and much more.
 

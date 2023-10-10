@@ -12,9 +12,10 @@ import { Wallet } from "@project-serum/anchor";
 import { PublicKey , sendAndConfirmTransaction } from "@solana/web3.js";
 import { Transaction } from "@solana/web3.js";
 import { retrieveMultisig } from "../utils/retrievemultisig";
+import { toast} from "react-hot-toast";
 
 export default function Index() {
-  const { Permissions } = multisig.types;  
+  const { Permissions } = multisig.types; 
   const { multisigCreate } = multisig.instructions;
   const wallet = useWallet();
   const [formData, setFormData] = useState({
@@ -32,11 +33,12 @@ export default function Index() {
   // @ts-ignore
   const handleSubmit = async (e) => {
     e.preventDefault(); 
-  
+    toast.success("Creating DAO");
     const latestBlockhash = await connection.getLatestBlockhash();
     const blockhash = latestBlockhash.blockhash ; // Provide the blockhash
     const createKey = Keypair.generate();
-    const pkey = createKey.publicKey
+    const pkey = createKey.publicKey;
+    toast.success(pkey.toBase58());
     const [multisigPda] = multisig.getMultisigPda({
       createKey : pkey,
     });
@@ -71,7 +73,6 @@ export default function Index() {
     // Create the unsigned transaction
     
     const unsignedTransaction = multisigCreate({
-      blockhash,
       createKey: pkey,
       creator: c,
       multisigPda,
@@ -81,7 +82,7 @@ export default function Index() {
       timeLock,
       memo: formData.daoName, // Use the DAO name as the memo, or specify another memo
     });
-
+    
     const pkeyinstring = pkey.toBase58();
 
     console.log(unsignedTransaction , "unsignedTransaction" , pkeyinstring , "pkeyinstring" , c , "c" , creator , "creator" , multisigPda , "multisigPda" , configAuthority , "configAuthority" , threshold , "threshold" , members , "members" , timeLock , "timeLock" , formData.daoName , "formData.daoName")
@@ -92,6 +93,7 @@ export default function Index() {
         const transaction = new Transaction().add(unsignedTransaction);
         transaction.recentBlockhash = (await connection.getRecentBlockhash()).blockhash;
         const signedbycreatekey = transaction.sign(createKey);
+        // @ts-ignore
         const signedTransaction = await wallet.signTransaction(transaction);
     
         console.log(signedTransaction , "signedTransaction", signedbycreatekey , transaction);

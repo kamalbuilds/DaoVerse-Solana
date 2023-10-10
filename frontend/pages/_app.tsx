@@ -20,6 +20,7 @@ import { Orbis, OrbisProvider } from "@orbisclub/components";
 import "@orbisclub/components/dist/index.modern.css";
 import React, { useEffect, useState } from "react";
 import { MarketingLayout } from "../layouts/Marketing";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function App({
   Component,
@@ -69,6 +70,32 @@ export default function App({
                   ]}
                 >
                     <MarketingLayout>
+                      <Toaster
+                        position="top-center"
+                        reverseOrder={false}
+                        gutter={8}
+                        containerClassName=""
+                        containerStyle={{}}
+                        toastOptions={{
+                          // Define default options
+                          className: '',
+                          duration: 5000,
+                          style: {
+                            background: '#363636',
+                            color: '#fff',
+                          },
+
+                          // Default options for specific types
+                          success: {
+                            duration: 3000,
+                            // @ts-ignore
+                            theme: {
+                              primary: 'green',
+                              secondary: 'black',
+                            },
+                          },
+                        }}
+                      />
                       <Component {...pageProps} />
                     </MarketingLayout>
                 </OrbisProvider>

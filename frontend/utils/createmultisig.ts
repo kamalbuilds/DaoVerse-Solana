@@ -6,41 +6,6 @@ import { bs58 } from "@project-serum/anchor/dist/cjs/utils/bytes";
 import { SystemProgram } from "@solana/web3.js";
 // Function to create a new multisig
 
-async function createMultisig() {
-  const { Permissions } = multisig.types;
-// @ts-ignore
-  const creator = Keypair.fromSecretKey(bs58.decode(process.env.NEXT_PUBLIC_SECRET_KEY));
-  console.log("wallet", creator);
-  const secondMember = Keypair.generate();
-
-  const createKey = Keypair.generate();
-  const pkey = createKey.publicKey
-  const [multisigPda] = multisig.getMultisigPda({
-    createKey : pkey,
-  });
-
-  const signature = await multisig.rpc.multisigCreate({
-    connection,
-    createKey,
-    creator,
-    multisigPda,
-    configAuthority: null,
-    timeLock: 0,
-    members: [
-      {
-        key: creator.publicKey,
-        permissions: Permissions.all(),
-      },
-      {
-        key: secondMember.publicKey,
-        permissions: Permissions.fromPermissions([Permission.Vote]),
-      },
-    ],
-    threshold: 2,
-  });
-
-  console.log("Multisig created: ", signature);
-}
 
 // Function to create a transaction proposal
 // async function createTransactionProposal() {
@@ -127,4 +92,4 @@ async function createMultisig() {
 //   console.log("Transaction executed: ", signature);
 // }
 
-export { createMultisig};
+
