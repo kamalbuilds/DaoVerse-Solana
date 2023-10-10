@@ -22,6 +22,9 @@ export function MarketingHeader({
         <Link href="/">
           <Logo />
         </Link>
+        <Link href="/managedao">
+          <Button className={styles.button}>Manage DAO</Button>
+        </Link>
         <WalletMultiButton />
       </Container>
     </header>

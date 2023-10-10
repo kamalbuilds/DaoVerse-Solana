@@ -13,7 +13,6 @@ import { connection } from "../pages/api/utils/constants";
 import { bs58 } from "@project-serum/anchor/dist/cjs/utils/bytes";
 import createMessage from "./api/createMessage";
 import updateMessage from "./api/updateMessage";
-// import { Permissions , Permission } from "@sqds/multisig/lib/types";
 // import { retrieveMultisig } from "../utils/retrievemultisig";
 // Function to create a new multisig
 // async function createMultisig() {

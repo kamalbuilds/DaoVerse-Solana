@@ -7,11 +7,8 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import * as multisig from "@sqds/multisig";
 import { Keypair, LAMPORTS_PER_SOL, sendAndConfirmRawTransaction } from "@solana/web3.js";
 import { connection } from "./api/utils/constants";
-// Function to create a new multisig
-import { Wallet } from "@project-serum/anchor";
 import { PublicKey , sendAndConfirmTransaction } from "@solana/web3.js";
 import { Transaction } from "@solana/web3.js";
-import { retrieveMultisig } from "../utils/retrievemultisig";
 import { toast} from "react-hot-toast";
 
 export default function Index() {
@@ -174,9 +171,6 @@ export default function Index() {
           </div>
 
         </form>
-        <Button className="px-8 py-2 bg-blue-500 text-white my-4" onClick={async () => retrieveMultisig("Aw1osme4xdCD2wtkypMCtnbkoBH67jebuyu83dXKk6uZ")} >
-              Retrieve DAO
-        </Button>
       </Container>
     </>
   );
