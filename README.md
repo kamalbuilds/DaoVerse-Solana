@@ -10,6 +10,10 @@ A DAO Tooling solution on Solana
 Squads Protocol, known for securing over $500 million in value, is a groundbreaking collection of programs that have redefined smart contract level account abstraction on Solana. 
 This foundational technology is now the bedrock for ushering in the next billion users into the world of crypto.
 
+## Slide Deck
+
+https://docs.google.com/presentation/d/1HNJjOoXS-09uKiFz7lkW8xWz1Dfb07_1cAz31vELdYo/edit?usp=sharing
+
 ## Demo Video
 
 ## Technologies

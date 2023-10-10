@@ -7,8 +7,11 @@ import { Button } from "../../primitives/Button";
 import { Container } from "../../primitives/Container";
 import { Logo } from "../Logo";
 import styles from "./MarketingHeader.module.css";
-import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
+import dynamic from 'next/dynamic';
 
+const WalletMultiButton = dynamic(() => import('@solana/wallet-adapter-react-ui').then(mod => mod.WalletMultiButton), {
+  ssr: false, // This line ensures the component is not rendered during server-side rendering
+});
 export function MarketingHeader({
   className,
   ...props

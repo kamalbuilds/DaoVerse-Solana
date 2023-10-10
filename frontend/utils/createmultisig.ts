@@ -3,11 +3,11 @@ import * as multisig from "@sqds/multisig";
 import { Keypair, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { connection } from "../pages/api/utils/constants";
 import { bs58 } from "@project-serum/anchor/dist/cjs/utils/bytes";
-import { Permissions , Permission } from "@sqds/multisig/lib/types";
 import { SystemProgram } from "@solana/web3.js";
 // Function to create a new multisig
 
 async function createMultisig() {
+  const { Permissions } = multisig.types;
 // @ts-ignore
   const creator = Keypair.fromSecretKey(bs58.decode(process.env.NEXT_PUBLIC_SECRET_KEY));
   console.log("wallet", creator);

@@ -180,8 +180,6 @@ function Home({defaultPosts}) {
                         </div>
                       }
 
-
-
               </section>
             </main>
           </div>

@@ -162,7 +162,6 @@ export default function Home() {
 
   return (
     <div>
-      <div >{<WalletMultiButton />}</div>
 
       <div >
         <h1>
