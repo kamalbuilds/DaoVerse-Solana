@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metaplex-foundation/mpl-token-metadata": "^2.1.2",
     "@project-serum/anchor": "^0.25.0",
     "@solana/spl-token": "^0.3.8",
     "@solana/wallet-adapter-base": "^0.9.18",
