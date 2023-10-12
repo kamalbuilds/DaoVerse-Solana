@@ -60,7 +60,7 @@ export function DashboardSidebar({ className, groups, ...props }: Props) {
             </li>
             <li>
               <SidebarLink href={DASHBOARD_DRAFTS_URL} icon={<FileIcon />}>
-                Drafts
+                Draft Proposals
               </SidebarLink>
             </li>
           </ul>
