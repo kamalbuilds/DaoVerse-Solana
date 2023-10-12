@@ -6,14 +6,8 @@ const { Permission, Permissions } = multisig.types;
 
 // Function to create a new multisig
 async function createMultisig() {
-  const creator = Keypair.generate();
+  const creator = Keypair.fromSecretKey(bs58.decode(process.env.NEXT_PUBLIC_SECRET_KEY));
   const secondMember = Keypair.generate();
-
-  const airdropSignature = await connection.requestAirdrop(
-    creator.publicKey,
-    1 * LAMPORTS_PER_SOL
-  );
-  await connection.confirmTransaction(airdropSignature);
 
   const createKey = Keypair.generate().publicKey;
   const [multisigPda] = multisig.getMultisigPda({

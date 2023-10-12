@@ -25,12 +25,13 @@ function Feature({ title, description, className, ...props }: FeatureProps) {
 }
 
 export default function Index() {
+
   return (
     <MarketingLayout>
       <Container className={styles.section}>
         <div className={styles.heroInfo}>
           <h1 className={styles.heroTitle}>
-            Kickstart your DAO&nbsp;in minutes
+            Kickstart your DAO&nbsp;in minute
           </h1>
           <p className={styles.heroLead}>
             A DAO Tooling solution on Solana aiming to simplify DAO Management and Governance.
@@ -49,6 +50,10 @@ export default function Index() {
           </LinkButton>
         </div>
       </Container>
+      <p className="text-blue-400">ffg</p>
+      <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
       <Container className={styles.section}>
         <h2 className={styles.sectionTitle}>Features</h2>
         <div className={styles.featuresGrid}>
@@ -106,6 +111,7 @@ export default function Index() {
             title="SWR"
           />
         </div>
+        {/* <button onClick={createMultisig}>Create Multisig</button> */}
       </Container>
     </MarketingLayout>
   );

@@ -15,6 +15,13 @@ import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import {  clusterApiUrl } from "@solana/web3.js";
 import "@solana/wallet-adapter-react-ui/styles.css";
 
+import { Orbis, OrbisProvider } from "@orbisclub/components";
+import "@orbisclub/components/dist/index.modern.css";
+import React, { useEffect, useState } from 'react';
+import { GlobalContext } from "../contexts/GlobalContext";
+
+
+
 export default function App({
   Component,
   pageProps,
@@ -22,6 +29,27 @@ export default function App({
 
   const endpoint = clusterApiUrl("devnet");
   const phantomWallet = new PhantomWalletAdapter();
+
+    /**
+   * Set the global forum context here (you can create categories using the dashboard by clicking on "Create a sub-context"
+   * from your main forum context)
+   */
+  global.orbis_context = "kjzl6cwe1jw14a01y9zyiwr6vbw7dib3jalr2sjpgbyfz79om0lejt0olo2qi9m";
+
+  /**
+   * Set the global chat context here (the chat displayed when users click on the "Community Chat" button).
+   * The Community Chat button will be displayed only if this variable is set
+   */
+  global.orbis_chat_context = "";
+
+  let orbis = new Orbis({
+    useLit: false,
+    node: "https://node2.orbis.club",
+    PINATA_GATEWAY: 'https://orbis.mypinata.cloud/ipfs/',
+    PINATA_API_KEY: process.env.NEXT_PUBLIC_PINATA_API_KEY,
+    PINATA_SECRET_API_KEY: process.env.NEXT_PUBLIC_PINATA_SECRET_API_KEY
+  });
+
   return (
     <>
       <Head>
@@ -33,7 +61,11 @@ export default function App({
         <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={[phantomWallet]}>
         <WalletModalProvider>
-          <Component {...pageProps} />
+          <OrbisProvider defaultOrbis={orbis} authMethods={["metamask", "wallet-connect", "email", "phantom"]}>
+          <GlobalContext.Provider>
+            <Component {...pageProps} />
+          </GlobalContext.Provider>
+    </OrbisProvider>
           </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
