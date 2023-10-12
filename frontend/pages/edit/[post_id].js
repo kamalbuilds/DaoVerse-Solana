@@ -1,8 +1,8 @@
-import Editor from "../../components/Editor";
-import Header from '../../components/Header';
-import Hero from '../../components/Hero';
-import Sidebar from '../../components/Sidebar';
-import Footer from '../../components/Footer';
+import Editor from "../../components/forum/Editor";
+import Header from '../../components/forum/Header';
+import Hero from '../../components/forum/Hero';
+import Sidebar from '../../components/forum/Sidebar';
+import Footer from '../../components/forum/Footer';
 import { Orbis, useOrbis, User } from "@orbisclub/components";
 
 export default function Edit({post}) {

@@ -1,8 +1,8 @@
-@import "./normalize.css";
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./normalize.css";
 
 :root {
   --color-black: 0 0 0;
