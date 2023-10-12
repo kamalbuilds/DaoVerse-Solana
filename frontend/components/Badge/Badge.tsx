@@ -9,19 +9,19 @@ export function Badge({
   return (
     <a
       className={clsx(className, styles.badge)}
-      href="https://liveblocks.io"
+      href="https://v4.squads.so/"
       rel="noreferrer"
       target="_blank"
       {...props}
     >
       <picture>
         <source
-          srcSet="https://liveblocks.io/badge-dark.svg"
+          srcSet="https://avatars.githubusercontent.com/u/84348534?s=45&v=4"
           media="(prefers-color-scheme: dark)"
         />
         <img
-          src="https://liveblocks.io/badge-light.svg"
-          alt="Made with Liveblocks"
+          src="https://avatars.githubusercontent.com/u/84348534?s=45&v=4"
+          alt="Made with Squadsv4"
           className={styles.image}
         />
       </picture>

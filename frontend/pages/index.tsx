@@ -30,11 +30,10 @@ export default function Index() {
       <Container className={styles.section}>
         <div className={styles.heroInfo}>
           <h1 className={styles.heroTitle}>
-            Kickstart your collaborative&nbsp;app
+            Kickstart your DAO&nbsp;in minutes
           </h1>
           <p className={styles.heroLead}>
-            Use the Liveblocks Starter Kit to build your document-based
-            collaborative app in&nbsp;minutes.
+            A DAO Tooling solution on Solana aiming to simplify DAO Management and Governance.
           </p>
         </div>
         <div className={styles.heroActions}>
@@ -42,7 +41,7 @@ export default function Index() {
             Sign in
           </Button>
           <LinkButton
-            href="https://liveblocks.io/docs/guides/nextjs-starter-kit"
+            href="https://docs.solana.com/"
             target="_blank"
             variant="secondary"
           >
