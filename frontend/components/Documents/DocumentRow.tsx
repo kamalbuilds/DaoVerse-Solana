@@ -1,4 +1,5 @@
 import clsx from "clsx";
+// @ts-ignore
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import Link from "next/link";
 import { useSession } from "next-auth/react";

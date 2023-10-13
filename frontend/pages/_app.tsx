@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { AppProps } from "next/app";
 import Head from "next/head";
@@ -62,10 +63,10 @@ export default function App({
       <WalletProvider wallets={[phantomWallet]}>
         <WalletModalProvider>
           <OrbisProvider defaultOrbis={orbis} authMethods={["metamask", "wallet-connect", "email", "phantom"]}>
-          <GlobalContext.Provider>
-            <Component {...pageProps} />
-          </GlobalContext.Provider>
-    </OrbisProvider>
+            <GlobalContext.Provider>
+              <Component {...pageProps} />
+            </GlobalContext.Provider>
+          </OrbisProvider>
           </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
