@@ -21796,10 +21796,10 @@ xtend@^4.0.0, xtend@~4.0.1:
   resolved "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz"
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
-y-prosemirror@1.0.20:
-  version "1.0.20"
-  resolved "https://registry.npmjs.org/y-prosemirror/-/y-prosemirror-1.0.20.tgz"
-  integrity sha512-LVMtu3qWo0emeYiP+0jgNcvZkqhzE/otOoro+87q0iVKxy/sMKuiJZnokfJdR4cn9qKx0Un5fIxXqbAlR2bFkA==
+y-prosemirror@^1.2.1, y-prosemirror@1.0.20:
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/y-prosemirror/-/y-prosemirror-1.2.1.tgz"
+  integrity sha512-czMBfB1eL2awqmOSxQM8cS/fsUOGE6fjvyPLInrh4crPxFiw67wDpwIW+EGBYKRa04sYbS0ScGj7ZgvWuDrmBQ==
   dependencies:
     lib0 "^0.2.42"
 
@@ -21956,7 +21956,7 @@ yargs@^17.6.2:
     y18n "^5.0.5"
     yargs-parser "^21.1.1"
 
-yjs@^13.3.2, yjs@^13.6.1, yjs@^13.6.7:
+yjs@^13.5.38, yjs@^13.6.1, yjs@^13.6.7:
   version "13.6.7"
   resolved "https://registry.npmjs.org/yjs/-/yjs-13.6.7.tgz"
   integrity sha512-mCZTh4kjvUS2DnaktsYN6wLH3WZCJBLqrTdkWh1bIDpA/sB/GNFaLA/dyVJj2Hc7KwONuuoC/vWe9bwBBosZLQ==
