@@ -9,6 +9,7 @@ import * as Server from "../lib/server";
 import { Button, LinkButton } from "../primitives/Button";
 import { Container } from "../primitives/Container";
 import styles from "./index.module.css";
+import { Popover } from "../primitives/Popover";
 
 interface FeatureProps extends Omit<ComponentProps<"div">, "title"> {
   description: ReactNode;
@@ -47,6 +48,14 @@ export default function Index() {
             variant="secondary"
           >
             Learn more
+          </LinkButton>
+          <LinkButton
+            href="frontend/pages/modal.tsx"
+            target="_blank"
+            variant="secondary"
+          >
+            Create DAO
+            
           </LinkButton>
         </div>
       </Container>
