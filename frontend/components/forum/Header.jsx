@@ -48,7 +48,7 @@ function Header() {
             <div className="shrink-0 mr-4">
               {/* Logo container */}
               <Link href="/" className="text-primary">
-                <img src="/logo-blue.png" className="h-8" />
+                <img src="/white-logo.png" className="h-8" />
               </Link>
             </div>
 

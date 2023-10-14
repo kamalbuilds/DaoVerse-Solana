@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Logo, TwitterIcon, GithubIcon, OrbisLogo } from "./Icons";
+import { OrbisLogo } from "./Icons";
 
 function Footer() {
   return (
@@ -31,32 +31,6 @@ function Footer() {
 
               </ul>
             </div>
-          </div>
-
-          {/* Bottom area */}
-          <div className="text-center md:flex md:items-center md:justify-between">
-            {/* Social links */}
-            <ul className="inline-flex mb-4 md:order-1 md:ml-4 md:mb-0 space-x-2">
-              <li>
-                <Link
-                  className="flex justify-center items-center text-brand text-brand-hover"
-                  target="_blank"
-                  href="https://twitter.com/useOrbis">
-                  <TwitterIcon />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="flex justify-center items-center text-brand text-brand-hover"
-                  target="_blank"
-                  href="https://github.com/OrbisWeb3/">
-                  <GithubIcon />
-                </Link>
-              </li>
-            </ul>
-
-            {/* Copyright
-            <div className="text-sm text-secondary">Copyright © Orbis Labs. All rights reserved.</div> */}
           </div>
         </div>
       </div>

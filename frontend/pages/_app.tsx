@@ -1,4 +1,4 @@
-// @ts-nocheck
+
 import { TooltipProvider } from "@radix-ui/react-tooltip";
 import { AppProps } from "next/app";
 import Head from "next/head";
@@ -19,7 +19,7 @@ import "@solana/wallet-adapter-react-ui/styles.css";
 import { Orbis, OrbisProvider } from "@orbisclub/components";
 import "@orbisclub/components/dist/index.modern.css";
 import React, { useEffect, useState } from "react";
-import { GlobalContext } from "../contexts/GlobalContext";
+// import { GlobalContext } from "../contexts/GlobalContext";
 
 export default function App({
   Component,
@@ -32,15 +32,14 @@ export default function App({
    * Set the global forum context here (you can create categories using the dashboard by clicking on "Create a sub-context"
    * from your main forum context)
    */
-  global.orbis_context =
-    "kjzl6cwe1jw14a01y9zyiwr6vbw7dib3jalr2sjpgbyfz79om0lejt0olo2qi9m";
-
+  // @ts-ignore
+  global.orbis_context  ="kjzl6cwe1jw14a01y9zyiwr6vbw7dib3jalr2sjpgbyfz79om0lejt0olo2qi9m";
   /**
    * Set the global chat context here (the chat displayed when users click on the "Community Chat" button).
    * The Community Chat button will be displayed only if this variable is set
    */
-  global.orbis_chat_context = "";
 
+  const [score, setScore] = useState(null);
   let orbis = new Orbis({
     useLit: false,
     node: "https://node2.orbis.club",
@@ -69,9 +68,7 @@ export default function App({
                     "phantom",
                   ]}
                 >
-                  <GlobalContext.Provider>
                     <Component {...pageProps} />
-                  </GlobalContext.Provider>
                 </OrbisProvider>
               </WalletModalProvider>
             </WalletProvider>

@@ -10,6 +10,7 @@ import { Button, LinkButton } from "../primitives/Button";
 import { Container } from "../primitives/Container";
 import styles from "./index.module.css";
 import { Popover } from "../primitives/Popover";
+import { connectWithSeed } from "../utils/orbishelper";
 
 interface FeatureProps extends Omit<ComponentProps<"div">, "title"> {
   description: ReactNode;
@@ -42,12 +43,20 @@ export default function Index() {
           <Button icon={<SignInIcon />} onClick={() => signIn()}>
             Sign in
           </Button>
+          <button onClick={connectWithSeed}>Connect with Seed</button>
           <LinkButton
-            href="https://docs.solana.com/"
+            href="/forum"
+            variant="secondary"
+          >
+            Check Forum
+          </LinkButton>
+          <LinkButton
+            href="frontend/pages/modal.tsx"
             target="_blank"
             variant="secondary"
           >
-            Learn more
+            Create DAO
+            
           </LinkButton>
           <LinkButton
             href="frontend/pages/modal.tsx"
@@ -59,10 +68,6 @@ export default function Index() {
           </LinkButton>
         </div>
       </Container>
-      <p className="text-blue-400">ffg</p>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
       <Container className={styles.section}>
         <h2 className={styles.sectionTitle}>Features</h2>
         <div className={styles.featuresGrid}>

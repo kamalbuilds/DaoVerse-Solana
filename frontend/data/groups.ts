@@ -10,8 +10,8 @@ export const groups: Group[] = [
     name: "Product",
   },
   {
-    id: "engineering",
-    name: "Engineering",
+    id: "socialmedia",
+    name: "Social Media Marketing",
   },
   {
     id: "design",
