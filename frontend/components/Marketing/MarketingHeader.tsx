@@ -7,6 +7,7 @@ import { Button } from "../../primitives/Button";
 import { Container } from "../../primitives/Container";
 import { Logo } from "../Logo";
 import styles from "./MarketingHeader.module.css";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 export function MarketingHeader({
   className,
@@ -18,9 +19,7 @@ export function MarketingHeader({
         <Link href="/">
           <Logo />
         </Link>
-        <Button icon={<SignInIcon />} onClick={() => signIn()}>
-          Sign in
-        </Button>
+        <WalletMultiButton />
       </Container>
     </header>
   );

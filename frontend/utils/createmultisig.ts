@@ -2,11 +2,13 @@
 import * as multisig from "@sqds/multisig";
 import { Keypair, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { connection } from "../pages/api/utils/constants";
-const { Permission, Permissions } = multisig.types;
-
+import { bs58 } from "@project-serum/anchor/dist/cjs/utils/bytes";
 // Function to create a new multisig
-async function createMultisig() {
+
+async function createMultisig(wallet) {
+
   const creator = Keypair.fromSecretKey(bs58.decode(process.env.NEXT_PUBLIC_SECRET_KEY));
+  console.log(wallet,"wallet", creator);
   const secondMember = Keypair.generate();
 
   const createKey = Keypair.generate().publicKey;
@@ -14,27 +16,27 @@ async function createMultisig() {
     createKey,
   });
 
-  const signature = await multisig.rpc.multisigCreate({
-    connection,
-    createKey,
-    creator,
-    multisigPda,
-    configAuthority: null,
-    timeLock: 0,
-    members: [
-      {
-        key: creator.publicKey,
-        permissions: Permissions.all(),
-      },
-      {
-        key: secondMember.publicKey,
-        permissions: Permissions.fromPermissions([Permission.Vote]),
-      },
-    ],
-    threshold: 2,
-  });
+  // const signature = await multisig.rpc.multisigCreate({
+  //   connection,
+  //   createKey,
+  //   creator,
+  //   multisigPda,
+  //   configAuthority: null,
+  //   timeLock: 0,
+  //   members: [
+  //     {
+  //       key: creator.publicKey,
+  //       permissions: Permissions.all(),
+  //     },
+  //     {
+  //       key: secondMember.publicKey,
+  //       permissions: Permissions.fromPermissions([Permission.Vote]),
+  //     },
+  //   ],
+  //   threshold: 2,
+  // });
 
-  console.log("Multisig created: ", signature);
+  // console.log("Multisig created: ", signature);
 }
 
 // Function to create a transaction proposal
