@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Editor from "../components/forum/Editor";
 import Header from '../components/forum/Header';
 import Hero from '../components/forum/Hero';
+// @ts-ignore
 import Sidebar from '../components/forum/Sidebar';
 import Footer from '../components/forum/Footer';
 import { useOrbis, User } from "@orbisclub/components";

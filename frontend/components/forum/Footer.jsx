@@ -12,7 +12,7 @@ function Footer() {
             <div className="shrink-0 mr-4">
               {/* Logo */}
               <Link className="inline-flex group mb-8 md:mb-0 text-primary" href="/">
-                <img src="/logo-gray.png" className="h-8" />
+                <img src="/white-logo.png" className="h-8" />
               </Link>
             </div>
             {/* Right links */}

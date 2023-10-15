@@ -15,11 +15,10 @@ import {
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { clusterApiUrl } from "@solana/web3.js";
 import "@solana/wallet-adapter-react-ui/styles.css";
-
+// @ts-ignore
 import { Orbis, OrbisProvider } from "@orbisclub/components";
 import "@orbisclub/components/dist/index.modern.css";
 import React, { useEffect, useState } from "react";
-// import { GlobalContext } from "../contexts/GlobalContext";
 
 export default function App({
   Component,

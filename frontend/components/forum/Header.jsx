@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import Link from 'next/link';
-import { Logo, PanelRight, SearchIcon, MenuVerticalIcon, LoadingCircle, PassportLogo, PassportLogoWhite } from "./Icons";
+import { Logo, PanelRight, SearchIcon, MenuVerticalIcon, LoadingCircle, PassportLogo, PassportLogoWhite } from "../forum/Icons";
 import useOutsideClick from "../../lib/client/hooks/useOutsideClick";
 import { useOrbis, User, UserPopup, Chat, Post } from "@orbisclub/components";
 import { getTimestamp } from "../../utils/forum";

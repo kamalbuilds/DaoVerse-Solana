@@ -8,7 +8,7 @@ import { MarketingLayout } from "../layouts/Marketing";
 import * as Server from "../lib/server";
 import { Button, LinkButton } from "../primitives/Button";
 import { Container } from "../primitives/Container";
-import styles from "./index.module.css";
+import styles from "../styles/index.module.css";
 import { Popover } from "../primitives/Popover";
 import { connectWithSeed } from "../utils/orbishelper";
 
@@ -33,7 +33,7 @@ export default function Index() {
       <Container className={styles.section}>
         <div className={styles.heroInfo}>
           <h1 className={styles.heroTitle}>
-            Kickstart your DAO&nbsp;in minute
+            Kickstart your DAO&nbsp;in minutes
           </h1>
           <p className={styles.heroLead}>
             A DAO Tooling solution on Solana aiming to simplify DAO Management and Governance.
@@ -51,20 +51,10 @@ export default function Index() {
             Check Forum
           </LinkButton>
           <LinkButton
-            href="frontend/pages/modal.tsx"
-            target="_blank"
+            href="/modal"
             variant="secondary"
           >
             Create DAO
-            
-          </LinkButton>
-          <LinkButton
-            href="frontend/pages/modal.tsx"
-            target="_blank"
-            variant="secondary"
-          >
-            Create DAO
-            
           </LinkButton>
         </div>
       </Container>

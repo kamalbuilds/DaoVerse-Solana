@@ -3,12 +3,14 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Header from '../components/forum/Header';
 import Hero from '../components/forum/Hero';
+// @ts-ignore
 import Sidebar from '../components/forum/Sidebar';
 import PostItem from '../components/forum/PostItem';
 import Footer from '../components/forum/Footer';
 import { LoadingCircle } from "../components/forum/Icons";
 import { Orbis, useOrbis } from "@orbisclub/components";
 import useDidToAddress from "../lib/client/hooks/useDidToAddress";
+import { createTileDoc , connectuser , connectWithSeed , createContext , grantAccess , getcontext} from "../utils/orbishelper";
 
 function Home({defaultPosts}) {
   const { orbis, user } = useOrbis();
@@ -84,7 +86,7 @@ function Home({defaultPosts}) {
     <>
       <Head>
         {/** Title */}
-        <title key="title">Dao Community forum |Powered by Orbis</title>
+        <title key="title">Dao Community forum | Powered by Orbis</title>
         <meta property="og:title" content="Make this your own community forum | Orbis" key="og_title" />
 
         {/** Description */}
@@ -92,6 +94,12 @@ function Home({defaultPosts}) {
         <meta property="og:description" content="Build your own community forum powered by Orbis." key="og_description"/>
         <link rel="icon" href="/favicon.png" />
       </Head>
+      <button onClick={createTileDoc} className="btn-sm py-1.5 btn-main mt-6">Create Tile</button>
+      <button onClick={connectuser} className="btn-sm py-1.5 btn-main mt-6">Connect User</button>
+      <button onClick={connectWithSeed} className="btn-sm py-1.5 btn-main mt-6">Connect With Seed</button>
+      <button onClick={()=> createContext("test")} className="btn-sm py-1.5 btn-main mt-6">Create Context</button>
+      {/* <button onClick={()=> grantAccess("test")} className="btn-sm py-1.5 btn-main mt-6">Grant Access</button> */}
+      <button onClick={()=> getcontext("test")} className="btn-sm py-1.5 btn-main mt-6">Get Context</button>
       <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip bg-main">
         <div className="antialiased">
           <div className="min-h-screen flex">

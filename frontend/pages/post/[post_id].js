@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Header from '../../components/forum/Header';
 import ArticleContent from '../../components/forum/ArticleContent';
+// @ts-ignore
 import Sidebar from '../../components/forum/Sidebar';
 import Footer from '../../components/forum/Footer';
 import { Orbis, Comments, User, useOrbis } from "@orbisclub/components";

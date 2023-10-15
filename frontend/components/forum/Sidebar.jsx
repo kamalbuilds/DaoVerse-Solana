@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useOrbis, User } from "@orbisclub/components";
-import { LoadingCircle } from "./Icons";
+import { LoadingCircle } from "../forum/Icons";
 import ReactTimeAgo from 'react-time-ago'
 
 function Sidebar() {
