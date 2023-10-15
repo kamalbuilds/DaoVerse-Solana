@@ -1,4 +1,4 @@
-# DaoVerse - Simplify DAO Management on Solana
+# DaoVerse - Simplify DAO Management, Discussion & Voting on Solana
 
 A DAO Tooling solution on Solana
 
@@ -6,7 +6,7 @@ A DAO Tooling solution on Solana
   <img src="https://github.com/kamalbuilds/DaoVerse-Solana/assets/95926324/8cc71f55-0434-4732-ae7f-579b0ad1744a" />
 </p>
 
-🌐 The future of decentralized autonomous organizations (DAOs) has arrived on the Solana blockchain with DaoVerse-Solana, a revolutionary DAO management and voting platform built on top of the powerful OpenBookV2 & Squads Protocol v4.
+🌐 The future of DAOs has arrived on the Solana blockchain with DaoVerse-Solana, a revolutionary DAO management and voting platform built on top of the powerful OpenBookV2 & Squads Protocol v4.
 Squads Protocol, known for securing over $500 million in value, is a groundbreaking collection of programs that have redefined smart contract level account abstraction on Solana. 
 This foundational technology is now the bedrock for ushering in the next billion users into the world of crypto.
 
