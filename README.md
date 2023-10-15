@@ -13,7 +13,7 @@ This foundational technology is now the bedrock for ushering in the next billion
 ## Demo Video
 
 ## Technologies
-🛡️ Squads Protocol, trusted by leading teams in the Solana ecosystem such as Drift, Helium, Jupiter, Raydium, Star Atlas, Pyth, Aurory, and Tensor, among others, has paved the way for a new era of innovation. Developers can now seamlessly integrate Squads Protocol's programs into their own applications, enhancing their features with multi-signature functionality. This includes versatile features such as spending limits, sub-accounts, time locks, and much more.
+🛡️ Squads Protocol allowed us to build a DAO Voting system and efficient treasury management , our seamless integration with Squads Protocol's programs leads to, enhanced features like multi-signature functionality. This includes versatile features such as spending limits, sub-accounts, time locks, and much more.
 
 🔒 With Orbis, we take DAOs to the next level by providing an encrypted forum where participants can engage and discuss before proposing their revolutionary ideas. This secure environment fosters collaboration and ensures that the best ideas rise to the top.
 
