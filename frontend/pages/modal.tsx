@@ -18,12 +18,13 @@ export default function Index() {
     walletAddresses: "",
     approvalThreshold: "",
   });
-
-  const handleInputChange = (e) => {
+  
+  const handleInputChange = (e : any) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // @ts-ignore
   const handleSubmit = async (e) => {
     e.preventDefault();
 

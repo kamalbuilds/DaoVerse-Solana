@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { GetServerSideProps } from "next";
 import { DASHBOARD_URL } from "../constants";
 import { MarketingLayout } from "../layouts/Marketing";

@@ -1,4 +1,5 @@
 
+// @ts-nocheck
 import { useState } from "react";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
